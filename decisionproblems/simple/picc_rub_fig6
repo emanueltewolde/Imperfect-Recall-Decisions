@@ -1,0 +1,16 @@
+# PiccioneR95 Fig 6
+# Fig 6 of Piccione and Rubinstein (1995):
+#
+node / chance actions l=0.5 r=0.5
+node /C:l player 1 actions s2 b2
+node /C:l/P1:s2 leaf payoffs 1=3
+node /C:l/P1:b2 player 1 actions s1 b1
+node /C:l/P1:b2/P1:s1 leaf payoffs 1=0
+node /C:l/P1:b2/P1:b1 leaf payoffs 1=2
+node /C:r player 1 actions s1 b1
+node /C:r/P1:s1 leaf payoffs 1=3
+node /C:r/P1:b1 player 1 actions s2 b2
+node /C:r/P1:b1/P1:s2 leaf payoffs 1=0
+node /C:r/P1:b1/P1:b2 leaf payoffs 1=2
+infoset inf1/ nodes /C:r /C:l/P1:b2
+infoset inf2/ nodes /C:l /C:r/P1:b1

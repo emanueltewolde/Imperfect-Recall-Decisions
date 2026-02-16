@@ -1,0 +1,12 @@
+# Games of detecting communities in graphs: there is a graph and some nodes of it are to be found (_positive_). They live in connected neighborhoods. When inquiring a node, we will only remember it if it is a positive one. We only have finitely many tries to find as many nodes as possible.
+
+graph:
+  distribution: "grid"
+  parameter_list: [2,3]
+
+communities: 
+  method: "enumerate"
+  community_list: [["star", 3], ["line", 1]]
+  valuation_list: [3, 1]
+
+num_rounds_max: 3

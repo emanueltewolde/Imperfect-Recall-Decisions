@@ -1,0 +1,12 @@
+# PiccioneR95 Fig 3
+# Fig 3 of Piccione and Rubinstein (1995):
+#
+node / player 1 actions l1 r1
+node /P1:l1 player 1 actions l2 r2
+node /P1:l1/P1:l2 leaf payoffs 1=1
+node /P1:l1/P1:r2 leaf payoffs 1=0
+node /P1:r1 player 1 actions l2 r2
+node /P1:r1/P1:l2 leaf payoffs 1=0
+node /P1:r1/P1:r2 leaf payoffs 1=2
+infoset inf1/ nodes /
+infoset inf2/ nodes /P1:l1 /P1:r1

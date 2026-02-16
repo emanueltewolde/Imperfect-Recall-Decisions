@@ -1,0 +1,22 @@
+randomstandard:
+    - tree_nodes: method: "bounds_linear" --> the bounds give minimum and maximum depth. It is decided by probability whether a node becomes a leaf node. Before the lower bound, that prob is 0, after upper bound, its 100, in between, it is linearly decreasing.
+    - chance: method: "bounds_uniform" --> it will be decided uniform at random what the degree for any particular chance node is from the provided interval
+    - decision_node_branching: method: "bounds_uniform" --> see above
+    - infosets: specs: "nodesperinfoset" says we want to specify infosets in terms of their node size. proportion: "log" or "sqrt" means the infoset size should be that of the total number of decision nodes in the tree, times the provided factor (integer). method: "exact" means infoset should be that size as exactly as possible, where as "pm20" means the size can up to +-20% (scaling drawn uniformly).
+    - payoffs: "uniform"
+
+simulationstandard:
+    - scenarios: integer ---> how many test scenarios there are in total on which the agent might be tested
+    - decision_node_branching: method: "exact" and width: 2 ---> there are only good and bad actions to take, no further distuingishing
+    - testing and reality: method: "chance" ---> rerolling whether to simulate/be deployed another time
+    - payoffs: reality_payoffs: "uniform" --> for each scnenario, draw a random util from the given intervals on how much util it gives the agent to act good vs bad in that scenario in the real world
+
+    Yet to be implemented: - testing and reality: method: "deterministic" ---> always do num_tests_max/num_deploy_max
+
+detectionstandard:
+    - graph: distribution: choose one out of "grid", "gnp", and "gnm" to create a graph that is a 2D grid of size nxm, an Erdős-Rényi-Gilbert G(n,p) graph, or an Erdős-Rényi G(n,m) graph
+    - graph: parameter_list: list of integers needed as input for graph generation above
+    - communities: method: choose form "enumerate" and "random" to enumerate all possible combinations of desired patterns or simply select num_samples random ones
+    - communities: if "enumerate" we also require a list of desired patterns including their size in "community_list" and another list "valuation_list" with the patterns' associated node valuations
+    - communities: if "random" we also require "num_samples", and bound lists [lower,upper] for the number of patterns "num_communities_bounds", the sizes of the patterns "community_size_bounds", and the pattern valuations "valuation_bounds" 
+    - num_rounds_max: integer number of rounds that the player can select nodes

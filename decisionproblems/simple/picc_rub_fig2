@@ -1,0 +1,18 @@
+# PiccioneR95 Fig 2
+# Fig 2 of Piccione and Rubinstein (1995):
+# Actions L and R at the beginning chance node were changed to heads and tails here
+#
+node / chance actions h=0.5 t=0.5
+node /C:h player 1 actions s1 b1
+node /C:h/P1:s1 leaf payoffs 1=2
+node /C:h/P1:b1 player 1 actions l r
+node /C:h/P1:b1/P1:l leaf payoffs 1=3
+node /C:h/P1:b1/P1:r leaf payoffs 1=0
+node /C:t player 1 actions s2 b2
+node /C:t/P1:s2 leaf payoffs 1=2
+node /C:t/P1:b2 player 1 actions l r
+node /C:t/P1:b2/P1:l leaf payoffs 1=0
+node /C:t/P1:b2/P1:r leaf payoffs 1=4
+infoset inf1/ nodes /C:h
+infoset inf2/ nodes /C:t
+infoset inf3/ nodes /C:h/P1:b1 /C:t/P1:b2

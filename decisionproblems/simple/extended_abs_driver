@@ -1,0 +1,10 @@
+# Extended Absentminded Driver
+#
+node / player 1 actions e c
+node /P1:e leaf payoffs 1=0
+node /P1:c player 1 actions e c
+node /P1:c/P1:e leaf payoffs 1=0
+node /P1:c/P1:c player 1 actions e c
+node /P1:c/P1:c/P1:e leaf payoffs 1=27
+node /P1:c/P1:c/P1:c leaf payoffs 1=0
+infoset pl1_1__highway/ nodes / /P1:c /P1:c/P1:c

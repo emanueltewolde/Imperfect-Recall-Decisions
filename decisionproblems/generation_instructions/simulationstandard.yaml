@@ -1,0 +1,24 @@
+# A test in simulation game: there are n test scenarios in total, the simulator has up to m tests available, and the AI will be deployed in k scenarios.
+
+scenarios: 3
+
+decision_node_branching:
+  width: 2
+  method: "exact"
+
+testing:
+  method: "chance"
+  sim_reroll_prob: 0.7
+  num_tests_max: 4
+
+reality:
+  method: "chance"
+  real_reroll_prob: 0.7
+  num_deploy_max: 2
+
+payoffs:
+  reality_payoffs: "uniform"
+  screened: 0
+  good_in_real_bounds: [0.1, 0.3]
+  bad_in_real_bounds: [1,10]
+  

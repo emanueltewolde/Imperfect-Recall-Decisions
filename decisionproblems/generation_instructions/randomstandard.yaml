@@ -1,0 +1,22 @@
+tree_nodes:
+  depth: [3,3]
+  method: "bounds_linear"
+  chance_presence: 0.2
+
+chance:
+  width: [2,2]
+  method: "bounds_uniform"
+  probs: "uniform"
+
+decision_node_branching:
+  width: [2,2]
+  method: "bounds_uniform"
+
+infosets:
+  method: "pm20"
+  specs: "nodesperinfoset"
+  proportion: "root" 
+  root_power: 0.66
+  factor: 1
+
+payoffs: "uniform"
