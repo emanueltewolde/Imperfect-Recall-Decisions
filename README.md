@@ -19,7 +19,7 @@ The repository implements 8 (families of) algorithms across three benchmark prob
     author = {Emanuel Tewolde and Brian Hu Zhang and Ioannis Anagnostides and Tuomas Sandholm and Vincent Conitzer},
     title = {Decision Making under Imperfect Recall: Algorithms and Benchmarks},
     year = {2026},
-    journal={arXiv:XXXX.XXXXX}
+    journal={arXiv:2602.15252}
 }
 ```
 
